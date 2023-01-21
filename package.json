@@ -1,0 +1,32 @@
+{
+  "name": "managers-team-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "node index",
+    "watch": "nodemon index",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/appleschaussaa/managers-team-generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/appleschaussaa/managers-team-generator/issues"
+  },
+  "homepage": "https://github.com/appleschaussaa/managers-team-generator#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}
