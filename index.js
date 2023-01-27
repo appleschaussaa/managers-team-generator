@@ -6,10 +6,10 @@ const Intern = require("./lib/intern");
 const fs = require("fs");
 const inquirer = require("inquirer");
 
-const generateEmployee = require("./src/generateEmployeeHTML");
+const generateEmployee = require("./src/generateEmployeeHTML.js");
+const generateEmployeeCSS = require("./src/generateEmployeeHTML.js");
 
-const questions = 
-    inquirer.prompt [
+const questions = [
         {
             type: "input",
             name: "name",
@@ -97,10 +97,37 @@ const questions =
                         return true;
                 }
         },
-        {
-            type: "confirm",
-            name: "anotherEmployee",
-            message: "Would you like to add another employee to your team?"
-        }
+        // {
+        //     type: "confirm",
+        //     name: "anotherEmployee",
+        //     message: "Would you like to add another employee to your team?",
+        //     validate: function (data) {
+        //         if (data === yes) {
+        //             return 
+        //         }
+        //                 return true;
+        //         }
+        // }
     ];
+    
+    function writeToFile (fileName, data) {
+        fs.writeFile(fileName, data, err => {
+            if (err) { 
+                return console.log("something went wrong")
+            } else {
+            console.log("Check out your employee html")
+            }
+        })
+    };
 
+    function init() {
+        inquirer.prompt(questions)
+        .then(function(data) {
+            console.log(data);
+            writeToFile("./dist/Employee-team.html", generateEmployee(data));
+                // .then(function(data))
+            // writeToFile("./dist/Employee-team.css", generateEmployeeCSS());
+        })
+    };
+
+    init();
