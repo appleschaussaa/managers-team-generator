@@ -24,8 +24,7 @@ Users should be able to:
 ​
 ### Screenshot
 ​
-![](./screenshot.jpg)
-
+![walkthrough video](./media/Untitled_%20Jan%2026%2C%202023%2011_39%20PM.webm)
 
 ## My process
 ​
